@@ -1,4 +1,10 @@
+import pygame as pg
+
 class Spiller:
     def __init__(self) -> None:
         self._x = 20
-        self._y = 20
+        self._y = 450
+        
+    def tegn(self, vindu):
+        pg.draw.circle(vindu, (100,50,140), (self._x,self._y), 25)
+        # pg.draw.circle(vindu, (r,g,b), (x,y), radius)
