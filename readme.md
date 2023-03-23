@@ -34,6 +34,7 @@ Mappen skal inneholde:
   - [objektorienterte modeller som beskriver programstruktur](modellering-og-representasjon/readme.md#objektorienterte-modeller-som-beskriver-programstruktur)
   - [representasjon av programflyt med kontrollstrukturer](modellering-og-representasjon/programflyt.md)
   - [brukervennlighet i programmer](modellering-og-representasjon/readme.md#brukervennlighet-i-programmer)
+  - [Arv](modellering-og-representasjon/arv/arv.md)
 - [Implementering](implementering/readme.md)
   - løsninger med programmering
   - gjenbrukbar kode
