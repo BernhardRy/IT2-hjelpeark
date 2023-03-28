@@ -11,11 +11,13 @@ for i in range(3):
     hindere.append(nytt_hinder)
 
 pg.init()
+clock = pg.time.Clock()
 
 VINDU_BREDDE = 500
 VINDU_HOYDE = 500
 vindu = pg.display.set_mode([VINDU_BREDDE, VINDU_HOYDE])
 
+y = 0
 fortsett = True
 while fortsett:
     for event in pg.event.get():
@@ -26,12 +28,33 @@ while fortsett:
     for hinder in hindere:
         hinder.flytt_venstre()
         hinder.tegn(vindu)
-    spiller1.tegn(vindu)
+    spiller1.tegn(vindu, y)
     # pg.draw.rect(vindu, (r,g,b), (x,y,bredde,hoyde))
+    
+    # if event.type == pg.KEYDOWN:
+    #     if event.key==pg.K_SPACE:
+    #         y -= 0.1
+    #         print("hei")
+
+    keys = pg.key.get_pressed()
+    tast = False
+
+    if keys[pg.K_UP]:
+        tast = True
+        while tast:
+            if event.type == pg.KEYUP:
+                print("hei")
+                tast = False
+                
+    # if keys[pg.K_LEFT]:
+    #     player_x -= 300 * dt
+    # if keys[pg.K_RIGHT]:
+    #     player_x += 300 * dt
 
     pg.display.flip() # Oppdaterer pygame-vinduet - denne må være med
 
-    time.sleep(1/60)
+    dt = clock.tick(60)
+    dt
 
 pg.quit()
 print("ferdig")
